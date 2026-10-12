@@ -1,170 +1,146 @@
 <div align="center">
 
-# 🌌 **PAYTM AI MERCHANT COPILOT** 🌌
-### *The Ultimate Neural Orchestration Platform for Next-Gen Business*
+<img src="docs/assets/banner.png" alt="AI Merchant Copilot" width="100%">
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Orbitron&weight=900&size=30&pause=1000&color=00BBA2&center=true&vCenter=true&width=700&lines=CORE+SYSTEM+ACTIVE;AI-DRIVEN+INVENTORY+VISION;SMART+DIGITAL+KHATA+BOOK;REAL-TIME+BUSINESS+TELEMETRY;DEVELOPED+FOR+SUSTAINABILITY)](https://git.io/typing-svg)
+# AI Merchant Copilot
 
-<br />
+**A shop assistant for India's small merchants: point the camera at a product, ask about your sales in Hindi or English, and see who owes you money.**
 
-<a href="SHOWCASE.html">
-  <img src="https://img.shields.io/badge/LAUNCH_3D_ARCH_SHOWCASE-00BBA2?style=for-the-badge&logo=rocket&logoColor=white" height="40" alt="Launch 3D">
-</a>
+[![FastAPI](https://img.shields.io/badge/FastAPI-backend-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![React](https://img.shields.io/badge/React_18-frontend-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
+[![OpenAI](https://img.shields.io/badge/GPT--4o--mini-vision_+_chat-412991?style=flat-square&logo=openai&logoColor=white)](https://platform.openai.com/)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-forecasting-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)](https://scikit-learn.org/)
+[![Recharts](https://img.shields.io/badge/Recharts-analytics-22B5BF?style=flat-square)](https://recharts.org/)
 
-<br /><br />
-
-<img src="docs/assets/banner.png" alt="Paytm Copilot Banner" width="100%" style="border-radius: 28px; box-shadow: 0 40px 80px rgba(0, 186, 242, 0.45); border: 1px solid rgba(0, 255, 255, 0.1);">
-
----
-
-### **🚀 THE MISSION OBJECTIVE**
-**Empowering local merchants with enterprise-grade Neural Intelligence. Transforming traditional operations into an autonomous, data-driven ecosystem powered by Vision Analytics and Predictive Logic.**
-
----
-
-<p align="center">
-  <a href="https://github.com/kartikeya2006jay/paytm-ai-merchant-copilot">
-    <img src="https://img.shields.io/badge/VERSION-CORE_V10.0-00BBA2?style=flat-square&logo=git&logoColor=white" alt="Version">
-  </a>
-  <a href="#">
-    <img src="https://img.shields.io/badge/BACKEND-FASTAPI_HYPER-002E6E?style=flat-square&logo=fastapi&logoColor=white" alt="Backend">
-  </a>
-  <a href="#">
-    <img src="https://img.shields.io/badge/ENGINE-NEURAL_MESH-B129FF?style=flat-square&logo=openai&logoColor=white" alt="AI">
-  </a>
-</p>
+[Features](#features) · [How it works](#how-it-works) · [Quick start](#quick-start) · [API](#api) · [3D showcase](SHOWCASE.html)
 
 </div>
 
-## 🪐 **3D EXPLODED TECHNOLOGY TOPOLOGY**
+---
 
-<div align="center">
+## The problem
+
+A kirana store owner runs the whole business from memory and a paper notebook. They track stock by eye, write credit (*udhaar*) in a *khata*, and rarely know which products actually make money.
+Most POS software is built for chains, not for a single counter with one phone.
+
+## What it does
+
+Merchant Copilot turns that phone into the back office:
+
+| | |
+|---|---|
+| 📷 **Camera stock-in** | Take a photo of a product. GPT-4o-mini vision recognises the brand and variant (for example, *Kurkure Masala Munch*), matches it to your existing inventory and fills in the entry, so there is nothing to type. |
+| 💬 **Ask your shop** | "How much did I sell yesterday?" "Who owes me money?" The assistant answers from your live inventory, recent sales and khata, **in Hindi (Devanagari) or English**. |
+| 📒 **Digital khata** | Track credit per customer, see outstanding balances and settle a debt in one tap. |
+| 📈 **Sales forecast** | A linear-regression model on daily sales predicts tomorrow's revenue, and the app suggests what to restock. |
+| 🧾 **Reports** | Profit and loss, per-product margins, end-of-day summary, cash-drawer reconciliation and a daily notification digest. |
+| 🔔 **Alerts** | Low-stock and business alerts in one panel. |
+| 👥 **Customers and expenses** | Customer analytics and an expense log, so profit means profit. |
+| 🔐 **Accounts** | Sign-up and login with bcrypt-hashed passwords and JWT sessions. Each merchant's data is kept separate. |
+| 🌗 **Themes** | Dark, light and glass themes driven by CSS variables. They switch instantly, with no reload. |
+
+## How it works
 
 ```mermaid
-graph TD
-    subgraph "Holographic Visual Layer"
-    UI[<b>VISUAL HUB</b><br/>React 18 + Framer Motion]
+flowchart LR
+    subgraph Client["React 18 app"]
+        Cam[Product scanner]
+        Chat[Chat box · Hindi / English]
+        Dash[Dashboard · Recharts]
     end
-
-    subgraph "Neural Logic Layer"
-    NG[<b>NEURAL GATEWAY</b><br/>FastAPI / Secure Matrix]
+    subgraph API["FastAPI"]
+        Vision[/recognize/]
+        Ask[/chat/]
+        Data[transactions · inventory · lending · expenses]
+        Pred[/predict · /sales-tip/]
+        Rep[/reports/*/]
     end
-
-    subgraph "Intelligence Matrix"
-    IM[<b>VISION ENGINE</b><br/>AI Scanner + OpenAI Mesh]
-    end
-
-    subgraph "Persistent Ledger"
-    PL[<b>STOCK REPOSITORY</b><br/>Isolated Merchant Data]
-    end
-
-    UI -- 3D States --> NG
-    NG -- Neural Pipe --> IM
-    IM -- Data Sync --> PL
-    PL -- High-Speed Retrieval --> NG
-    
-    linkStyle default stroke:#00fbff,stroke-width:2px,stroke-dasharray: 4 4;
-    style UI fill:#00BBA2,stroke:#00FBFF,stroke-width:4px,color:#fff
-    style NG fill:#002E6E,stroke:#00FBFF,stroke-width:4px,color:#fff
-    style IM fill:#B129FF,stroke:#00FBFF,stroke-width:4px,color:#fff
-    style PL fill:#1e293b,stroke:#00FBFF,stroke-width:4px,color:#fff
+    Cam --> Vision -->|GPT-4o-mini vision| Data
+    Chat --> Ask -->|inventory + sales + khata as context| LLM[(OpenAI)]
+    Dash --> Rep
+    Dash --> Pred -->|scikit-learn| Data
+    Data --> CSV[(Per-merchant CSV / JSON store)]
 ```
 
-</div>
+- **Vision with context.** The model sees your current product list, so a new photo maps to the name you already use and never creates a duplicate SKU. If the API is unavailable, a fallback keeps the flow working.
+- **Grounded chat.** Each question is answered from the merchant's own data: the inventory, debtors with a positive balance and the 15 most recent transactions.
+- **Lightweight storage.** Data lives in CSV and JSON files through pandas. The app runs on a laptop with no database server, which suits a single shop.
 
----
+## Tech stack
 
-## ⚡ **MISSION-CRITICAL CAPABILITIES**
+| Layer | Technology |
+|---|---|
+| Frontend | React 18, React Router, Framer Motion, Recharts, Lucide icons, Axios |
+| Backend | Python, FastAPI, Uvicorn, pandas, NumPy |
+| AI / ML | OpenAI GPT-4o-mini (vision + chat), scikit-learn (linear regression), OpenCV |
+| Auth | python-jose (JWT), passlib (bcrypt) |
 
-<div align="center">
-<table align="center" style="border-collapse: collapse; width: 100%; border-radius: 20px; overflow: hidden; background: rgba(0, 0, 0, 0.05); border: 1px solid rgba(0, 186, 242, 0.2);">
-  <tr>
-    <td width="33%" align="center" style="padding: 2.5rem; border-right: 1px solid rgba(0, 186, 242, 0.1);">
-      <img src="https://img.icons8.com/?size=100&id=108652&format=png&color=00BBA2" width="70px">
-      <h3><b>📦 AI INVENTORY</b></h3>
-      <p><i>Real-time camera recognition hub for autonomous product auditing & restock alerts.</i></p>
-    </td>
-    <td width="33%" align="center" style="padding: 2.5rem; border-right: 1px solid rgba(0, 186, 242, 0.1);">
-      <img src="https://img.icons8.com/?size=100&id=114436&format=png&color=B129FF" width="70px">
-      <h3><b>📓 NEURAL KHATA</b></h3>
-      <p><i>Intelligent credit ledger with high-fidelity theme-aware action portals & receivables tracking.</i></p>
-    </td>
-    <td width="33%" align="center" style="padding: 2.5rem;">
-      <img src="https://img.icons8.com/?size=100&id=111494&format=png&color=002E6E" width="70px">
-      <h3><b>📊 TELEMETRY</b></h3>
-      <p><i>High-velocity business dashboards transforming raw sales into actionable intelligence.</i></p>
-    </td>
-  </tr>
-</table>
-</div>
+## Quick start
 
----
+**Prerequisites:** Python 3.10+, Node.js 18+, an OpenAI API key.
 
-## ⚡ **DEEP-TECH FEATURE ARCHIVE**
-
-### 🧠 **AI VISION PIPELINE (STOCK REPOSITORY)**
-*   **Neural Recognition Hub**: Utilizing custom-trained vision models to identify products with **98% detection confidence** directly from a mobile camera feed.
-*   **Shutter-Flash Feedback**: Instant visual confirmation upon image capture using high-fidelity CSS/JS animations for a satisfying "Smart Camera" experience.
-*   **Autonomous Cataloging**: Automatically injects **Product Name, Cost Price, and Selling Price** into the catalog with zero manual typing required.
-
-### 📓 **DIGITAL KHATA DYNAMICS (CREDIT LEDGER)**
-*   **Merchant-Controlled Liquidation**: High-contrast, theme-aware "PAY" buttons for instant debt settlement and record clearing.
-*   **Receivable Trajectory Tracking**: Automatically calculates total outstanding credit per customer and alerts the merchant when limits are reached.
-*   **Immutable Transaction Mesh**: Secure, chronologically indexed transaction history for absolute merchant integrity.
-
-### 💠 **HOLOGRAPHIC THEME ENGINE**
-*   **Glassmorphic Aesthetic**: A unique design language featuring **background blur (20px)**, soft neon glows, and 3D shadows for an elite, investor-ready POS interface.
-- **Dynamic Variable System**: Native CSS variables allow for instant theme shifts (Dark/Light/Glass) without page reloads, maintaining consistent readability across all merchant lighting conditions.
-
-### 📉 **BUSINESS ANALYTICS HUB**
-- **Revenue Extraction Charting**: Powered by Recharts to visualize sales trajectory, profit peaks, and inventory health metrics in real-time.
-- **Growth Pulse Indicators**: Automated calculation of daily/weekly growth percentage to provide instant business performance feedback.
-
----
-
-## 🚀 **MISSION INITIALIZATION**
-
-<div align="center">
-
-**Step 1: Deploy Neural Backbone**
 ```bash
+git clone https://github.com/kartikeyajay2006/AI-Businesses.git
+cd AI-Businesses
+
+# Backend: http://localhost:8000
+echo "OPENAI_API_KEY=sk-..." > .env
+echo "SECRET_KEY=change-me" >> .env
 cd backend
 python -m venv venv && source venv/bin/activate
-pip install -r requirements.txt
-./run_server.sh
+pip install -r requirements.txt "python-jose[cryptography]" "passlib[bcrypt]"
+uvicorn app.main:app --reload --port 8000
 ```
 
-**Step 2: Activate Holographic Hub**
 ```bash
+# Frontend: http://localhost:3000 (new terminal)
 cd frontend
-npm install --force
+npm install --legacy-peer-deps
 npm start
 ```
 
-</div>
+Sample data in `backend/data/` and `datasets/sample_transactions.csv` fills the dashboard on first run.
+Point the frontend at another backend with `REACT_APP_API_URL`.
 
----
+## API
 
-## 📂 **SYSTEM SYSTEM ONTOLOGY**
+| Area | Endpoints |
+|---|---|
+| Auth | `POST /signup` · `POST /login` · `GET /me` · `POST /change-password` |
+| Vision | `POST /recognize` · `GET /product-image` |
+| Sales | `POST /transactions` · `POST /transactions/bulk` · `GET /transactions-history` · `GET /summaries` |
+| Inventory | `GET /inventory` · `POST /inventory` · `DELETE /inventory/{product_name}` · `GET /inventory-optimization` |
+| Khata | `GET /lending` · `POST /lending/pay` |
+| Insights | `GET /predict` · `GET /sales-tip` · `GET /customers/analytics` · `GET /alerts` |
+| Reports | `GET /reports/profit-loss` · `/reports/margins` · `/reports/eod` · `/reports/cash-drawer` · `/reports/daily-notification` |
+| Expenses | `GET /expenses` · `POST /expenses` |
+| Assistant | `POST /chat` |
+| Settings | `GET /settings` · `POST /settings` |
 
-```yaml
-paytm-ai-merchant-copilot:
-  - backend: 🐍 Python Neural Logic Matrix
-    - app: Logic Core
-      - api: Transaction & Inventory Matrix
-      - services: Autonomous Neural Workflows (Vision, LLM)
-  - frontend: ⚛️ React Visual Hub
-    - src:
-      - components: Glassmorphic UI (AddProduct, ProductScanner)
-      - styles: Cyber-Thematic Design v4.0
-  - docs: 📖 Architectural Blueprints
+The interactive docs are at `http://localhost:8000/docs`.
+
+## Project structure
+
+```text
+backend/app/
+  api/         13 routers: auth, vision, transactions, inventory, lending, reports, insights, ...
+  services/    vision, OpenAI chat, prediction, insights, chat history
+  utils/       auth, data loading, date parsing
+  data/        sample per-merchant data
+frontend/src/
+  components/  ProductScanner, KhataView, InventoryView, SalesPrediction, ChatBox, ReportsView, ...
+  context/     auth and theme providers
+SHOWCASE.html  interactive 3D architecture showcase
 ```
 
----
+## Roadmap
 
-<div align="center">
-  <img src="https://img.shields.io/badge/ARCHITECTED_BY-KARTIKEYA-002E6E?style=for-the-badge&logo=apple" alt="Architected by Kartikeya">
-  <br />
-  <p><b>Designed by Kartikeya Yadav – The Future of Merchant Operations</b></p>
-  <p><i>Empowering local businesses with advanced enterprise-grade AI.</i></p>
-</div>
+- Move storage from CSV to PostgreSQL for multi-device sync
+- UPI QR payment reconciliation
+- WhatsApp reminders for outstanding khata balances
+- Offline-first PWA for patchy networks
+
+## Author
+
+Built by **[Kartikeya Yadav](https://github.com/kartikeyajay2006)**.
+[LinkedIn](https://www.linkedin.com/in/kartikeya2006/) · [Portfolio](https://kartikeya-portfolio-rx7w.vercel.app/)
